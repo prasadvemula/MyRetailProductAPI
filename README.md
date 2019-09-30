@@ -25,9 +25,9 @@ To run in local create the below keyspace, table info and provide cassandra host
 
 create KEYSPACE product WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
-create table price (product_id text, price text, currency text, PRIMARY KEY (product_id));
+create table price (productId text, price text, currency text, PRIMARY KEY (productId));
 
-sample insert statement: INSERT INTO price (product_id, price, currency) values ('52268280','29.99', 'USD');
+sample insert statement: INSERT INTO price (productId, price, currency) values ('52268280','29.99', 'USD');
 
 ## Running app
 
