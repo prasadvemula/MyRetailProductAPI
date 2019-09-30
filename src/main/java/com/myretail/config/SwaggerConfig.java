@@ -26,9 +26,9 @@ public class SwaggerConfig {
     }
 
     private ApiInfo metadata() {
-        return new ApiInfoBuilder().title("items-v1")
+        return new ApiInfoBuilder().title("product-v1")
                 .description(
-                        "items v1 service aggregates item data and price")
+                        "product v1 service aggregates item data and price")
                 .version("v1")
                 .build();
     }
