@@ -1,10 +1,12 @@
 package com.myretail.exceptions;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @NoArgsConstructor
+@Data
 public class ProductException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
@@ -17,20 +19,8 @@ public class ProductException extends RuntimeException {
         this.errorKey = errorKey;
     }
 
-    public ProductException(String errorKey, String errorMessage) {
-        this.errorMessage = errorMessage;
-    }
-
     public ProductException(String errorKey, Throwable e) {
         super(errorKey, e);
         this.errorKey = errorKey;
-    }
-
-    public String getErrorKey() {
-        return errorKey;
-    }
-
-    public String getErrorMessage() {
-        return errorMessage;
     }
 }

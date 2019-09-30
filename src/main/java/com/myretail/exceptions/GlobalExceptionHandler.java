@@ -42,7 +42,4 @@ public class GlobalExceptionHandler {
         return httpStatus;
     }
 
-    protected String getProperty(String errorKey) {
-        return propertyResolver.getProperty(errorKey);
-    }
 }
