@@ -12,11 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@NoArgsConstructor
-@AllArgsConstructor
 public class ItemServiceImpl implements ItemService {
-    @Autowired
+
     private ItemFacade itemFacade;
+
+    @Autowired
+    public ItemServiceImpl(ItemFacade itemFacade) {
+        this.itemFacade = itemFacade;
+    }
 
     @Override
     public ProductResponse getProductDetails(String productId) {

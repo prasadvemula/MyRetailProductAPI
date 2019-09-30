@@ -4,8 +4,6 @@ import com.myretail.respository.price.PriceRepository;
 import com.myretail.respository.entity.Price;
 import com.myretail.rest.product.request.PriceRequest;
 import com.myretail.service.price.PriceService;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
@@ -13,12 +11,14 @@ import org.modelmapper.ModelMapper;
 
 @Service
 @Configuration
-@NoArgsConstructor
-@AllArgsConstructor
 public class PriceServiceImpl implements PriceService {
 
-    @Autowired
     private PriceRepository priceRepository;
+
+    @Autowired
+    public PriceServiceImpl(PriceRepository priceRepository) {
+        this.priceRepository = priceRepository;
+    }
 
     @Override
     public Price fetchPrice(String id){

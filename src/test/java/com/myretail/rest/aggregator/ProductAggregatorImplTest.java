@@ -19,7 +19,6 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class ProductAggregatorImplTest {
 
-    @Autowired
     ProductAggregatorImpl productAggregator;
 
     @Mock
@@ -28,10 +27,9 @@ public class ProductAggregatorImplTest {
     @Mock
     private ItemService itemService;
 
-
     @Before
     public void setUp() throws Exception {
-        productAggregator = new ProductAggregatorImpl(priceService, itemService);
+        productAggregator = new ProductAggregatorImpl(itemService, priceService);
     }
 
     @Test

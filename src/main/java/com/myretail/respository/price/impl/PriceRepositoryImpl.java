@@ -4,6 +4,7 @@ import com.myretail.respository.price.PriceRepository;
 import com.myretail.respository.entity.Price;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.time.StopWatch;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.CassandraOperations;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +14,7 @@ public class PriceRepositoryImpl implements PriceRepository {
 
     private final CassandraOperations cassandraOperations;
 
-
+    @Autowired
     public PriceRepositoryImpl(CassandraOperations cassandraOperations) {
         this.cassandraOperations = cassandraOperations;
     }

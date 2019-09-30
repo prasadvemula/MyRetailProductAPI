@@ -7,23 +7,22 @@ import com.myretail.rest.product.response.ProductResponse;
 import com.myretail.service.item.ItemService;
 import com.myretail.service.price.PriceService;
 import io.reactivex.schedulers.Schedulers;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import io.reactivex.Observable;
 
-
 @Service
-@NoArgsConstructor
-@AllArgsConstructor
 public class ProductAggregatorImpl implements ProductAggregator {
 
-    @Autowired
     private PriceService priceService;
 
-    @Autowired
     private ItemService itemService;
+
+    @Autowired
+    public ProductAggregatorImpl(ItemService itemService, PriceService priceService) {
+        this.itemService = itemService;
+        this.priceService  = priceService;
+    }
 
     @Override
     public ProductResponse fetchProduct(String productId) throws ProductException {
